@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{761E5FBB-67A2-442C-9F54-65BD9576279C}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>EnvelopeCore</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>..\lib;</LibraryPath>
+    <IncludePath>..\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>..\lib;</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\include;.\Model\Provider;..\Envelope.Math\Math;..\Envelope.Math\alglib;..\Envelope.Math\;.\Model\Skirt;.\Model\Landscape;.\Services;.\Model;.\;.\Calc;</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(OutDir)Envelope.Math.lib;tecio.lib;c:\Program Files (x86)\Tecplot\Tec360 2013R1\bin\tecio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Envelope\Debug;c:\Program Files (x86)\Tecplot\Tec360 2013R1\bin\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <Lib>
+      <AdditionalLibraryDirectories>c:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\include;.\Model\Provider;..\Envelope.Math\Math;..\Envelope.Math\alglib;..\Envelope.Math\;.\Model\Skirt;.\Model\Landscape;.\Services;.\Model;.\;.\Calc;</AdditionalIncludeDirectories>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Calc\CalculatingData.h" />
+    <ClInclude Include="Calc\CalculationParameters.h" />
+    <ClInclude Include="Data.h" />
+    <ClInclude Include="Envelope.Core.h" />
+    <ClInclude Include="Envelope.Core.Consts.h" />
+    <ClInclude Include="Model\Provider\IDAModelProvider.h" />
+    <ClInclude Include="Services\IDAUtils.h" />
+    <ClInclude Include="Model\Forces.h" />
+    <ClInclude Include="Model\FiveNodePattern.h" />
+    <ClInclude Include="Services\InOut.h" />
+    <ClInclude Include="Model\Landscape\LandscapeData.h" />
+    <ClInclude Include="Model\Landscape\LandscapeParameters.h" />
+    <ClInclude Include="Model\ModelData.h" />
+    <ClInclude Include="Model\ModelParameters.h" />
+    <ClInclude Include="Model\Provider\ModelProvider.h" />
+    <ClInclude Include="Model\Node.h" />
+    <ClInclude Include="Model\Skirt\SkirtData.h" />
+    <ClInclude Include="Model\Skirt\SkirtParameters.h" />
+    <ClInclude Include="Parameters.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Services\IniReader.h" />
+    <ClInclude Include="Services\IniWriter.h" />
+    <ClInclude Include="Services\MemoryUtils.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="Summary.h" />
+    <ClInclude Include="Services\TpUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Calc\CalculatingData.cpp" />
+    <ClCompile Include="Calc\CalculationParameters.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="Envelope.Core.cpp" />
+    <ClCompile Include="Model\Provider\IDAModelProvider.cpp" />
+    <ClCompile Include="Services\IDAUtils.cpp" />
+    <ClCompile Include="Model\Forces.cpp" />
+    <ClCompile Include="Model\FiveNodePattern.cpp" />
+    <ClCompile Include="Services\InOut.cpp" />
+    <ClCompile Include="Model\Landscape\LandscapeData.cpp" />
+    <ClCompile Include="Model\Landscape\LandscapeParameters.cpp" />
+    <ClCompile Include="Model\ModelData.cpp" />
+    <ClCompile Include="Model\ModelParameters.cpp" />
+    <ClCompile Include="Model\Provider\ModelProvider.cpp" />
+    <ClCompile Include="Model\Node.cpp" />
+    <ClCompile Include="Model\Skirt\SkirtData.cpp" />
+    <ClCompile Include="Model\Skirt\SkirtParameters.cpp" />
+    <ClCompile Include="Parameters.cpp" />
+    <ClCompile Include="Services\IniReader.cpp" />
+    <ClCompile Include="Services\IniWriter.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Summary.cpp" />
+    <ClCompile Include="Services\TpUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Envelope.Math\Envelope.Math.vcxproj">
+      <Project>{9360e73b-2d0c-4971-bfdf-eba4febb02cc}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

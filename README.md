@@ -15,7 +15,9 @@
 [![Смотреть ролик на Youtube](https://img.youtube.com/vi/WNTJe_GrTFg/0.jpg)](https://www.youtube.com/watch?v=WNTJe_GrTFg)
 
 ###### Проект был выполнен во время моей работы в [МГТУ им. Баумана](https://bmstu.ru/) в 2013 году.
+
 ---
+
 ## Hovercraft Obstacle Overcoming Simulation
 The software allows simulating obstacles navigation by air cushion hovercraft in the landscape. An air cushion is an elastic dense chamber in the form of a truncated cone, inside which excess air pressure is injected. When the air cushion is moving, 5 forces are taken into account - pressure, friction, gravity, resistance to bending and tension-compression.
 #### Description of the problem
